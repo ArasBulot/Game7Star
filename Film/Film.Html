@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film</title>
+    <link rel="stylesheet" href="../Css/Film.Css">
+    <link rel="icon" type="image/x-icon" href="../Image/Icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+        <!-- ...................Button Top ==> Start............. -->
+		<button class="scrollToTopBtn">👆</button>
+        <script>
+            var scrollToTopBtn = document.querySelector(".scrollToTopBtn")
+            var rootElement = document.documentElement
+            function handleScroll() {
+            var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+            if ((rootElement.scrollTop / scrollTotal ) > 0.15) {
+            scrollToTopBtn.classList.add("showBtn")
+              } else {
+            scrollToTopBtn.classList.remove("showBtn")
+              }
+              }
+            function scrollToTop() {
+            rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+              })
+             }
+            scrollToTopBtn.addEventListener("click", scrollToTop)
+            document.addEventListener("scroll", handleScroll)
+        </script>
+              <style>
+                .scrollToTopBtn {
+                    background-color: #9b9b9b;
+                    border: none;
+                    border-radius: 50%;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 30px;
+                    line-height: 48px;
+                    width: 48px;
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    z-index: 100;
+                    opacity: 0;
+                    transform: translateY(100px);
+                    transition: all .5s ease
+                    }
+                .showBtn {
+                    opacity: 1;
+                    transform: translateY(0)
+                    }
+                .scrollToTopBtn:hover{
+                    background-color: #5a5a5a;
+                    }
+            </style>    
+ <!-- ...................Button Top ==> End............... -->
+
+
+
+        <!-- ...................Menu Left ==> Start............... -->
+          <div class="d-flex" id="wrapper">                                                         
+            <!-- ....................Menu Close/Open ==> Start................ -->                        
+                  <nav class="navbar position-fixed">
+                    <div class="container-fluid">
+                      <button style="background-color:#5a5a5a;" class="btn" id="sidebarToggle"><i class="bi bi-list text-light"></i></button>
+                    </div>
+                  </nav>
+
+            <!-- .....................Menu Close/Open ==> End................. -->              
+
+                  <div class="" id="sidebar-wrapper">
+                      <ul class="nav flex-column mb-auto text-center">
+                        <li class="nav-item active">
+                          <a href="../Aboat us/Aboat us.Html" class="nav-link  text-dark py-2"  aria-current="page" title="Aboat us" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <img src="../Image/Icon.png" style="height: 40px; margin-left: -5px;">
+                          </a>
+                        </li>
+                        <li class="nav-item active">
+                          <a href="../index.Html" class="nav-link  text-dark py-2"  aria-current="page" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <i class="bi bi-house" style="font-size:27px;"></i>
+                          </a>
+                        </li>
+                        <li class="nav-item ">
+                          <a href="../Photo/Photo.html" class="nav-link text-dark py-2  rounded-0" title="Photo" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <i class="bi bi-image" style="font-size:27px;"></i>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a  class="nav-link py-2 text-dark rounded-0" id="active2" title="Film" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <i class="bi bi-film" style="font-size:27px;"></i>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="../Music/Music.html" class="nav-link py-2 text-dark rounded-0" title="Music" data-bs-toggle="tooltip" data-bs-placement="right" >
+                            <i class="bi bi-music-note-beamed" style="font-size:27px;"></i>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="../Game/Game.html" class="nav-link py-2 text-dark rounded-0" title="Game" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <i class="bi bi-controller" style="font-size:27px;"></i>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#section-7" class="nav-link py-2 text-dark rounded-0" title="Search" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <i class="bi bi-search" style="font-size:27px;"></i>
+                          </a>
+                        </li>
+                      </ul>
+                      <div class="dropdown border-top position-absolute bottom-0">
+                        <a href="#" style="color:#333;"  data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="../Image/Yamach.jpeg" alt="mdo" class="rounded-circle">            
+                        </a>
+                        <ul class="dropdown-menu text-small shadow">
+                          <li><a class="dropdown-item" href="../User/Question/Question.Html">Question</a></li>
+                          <li><a class="dropdown-item" href="../User/Setting/Setting.Html">Settings</a></li>
+                          <li><a class="dropdown-item" href="../User/Profile/Profile.Html">Profile</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>                                                                            
+                  <script>
+                    $(document).ready(function () {
+                  /*
+                  $(".nav").on("mouseenter", "li", function () {  $(this).addClass("hover").siblings().removeClass("hover");}); 
+                    */
+                    $(".nav").on("click", "li", function () {
+                      $(this).addClass("active").siblings().removeClass("active");
+                    });
+                  });
+
+                  const tooltipTriggerList = document.querySelectorAll(
+                    '[data-bs-toggle="tooltip"]'
+                  );
+                  const tooltipList = [...tooltipTriggerList].map(
+                    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+                  );
+
+                  window.addEventListener("DOMContentLoaded", (event) => {
+                    // Toggle the side navigation
+                    const sidebarToggle = document.body.querySelector("#sidebarToggle");
+                    if (sidebarToggle) {
+                      sidebarToggle.addEventListener("click", (event) => {
+                        event.preventDefault();
+                        document.body.classList.toggle("sb-sidenav-toggled");
+                        localStorage.setItem(
+                          "sb|sidebar-toggle",
+                          document.body.classList.contains("sb-sidenav-toggled")
+                        );
+                        // content will slide on left
+                      });
+                    }
+                  });
+
+                  </script>
+        <!-- ....................Menu Left ==> End................ -->
+ 
+
+        
+</body>
+</html>
